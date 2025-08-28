@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Switcher</title>
+</head>
+<body>
+      <!-- approach 01 ---------> 
+    <!-- <div>
+        <img id="main" width="500px" src="./pexels-johnpet-2115257.jpg" alt="">
+    </div>
+    <div>
+        <img id="pic1" onclick="changeImage(this)" width="150px" src="./pexels-rucasouza-1049764.jpg" alt="">
+        <img id="pic2" onclick="changeImage(this)" width="150px" src="./pexels-veeterzy-303383.jpg" alt="">
+        <img id="pic3" onclick="changeImage(this)" width="150px" height="100px" src="./pexels-vlada-karpovich-4050430.jpg" alt="">
+        <img id="pic4" onclick="changeImage(this)" width="150px" src="./pexels-luis-gomes-166706-546819.jpg" alt="">
+        <img id="pic5" onclick="changeImage(this)" width="150px" src="./pexels-johnpet-2115257.jpg" alt="">
+    </div> -->
+
+
+      <div>
+        <img id="main" width="500px" src="./img-01.jpg" alt="">
+    </div>
+    <div>
+        <img id="pic1"  width="150px" src="./img-01.jpg" alt="">
+        <img id="pic2"  width="150px" src="./img-02.jpg" alt="">
+        <img id="pic3" width="150px" src="./img-03.jpg" alt="">
+        <img id="pic4"  width="150px" src="./img-04.jpg" alt="">
+        <img id="pic5" width="150px" height="100px" src="./img-05.jpg" alt="">
+    </div>
+
+    <script>
+
+        // approach 01 --------->
+        // function changeImage(imagetag){
+        //     let main=document.getElementById("main")
+        //     main. src = imagetag.src  
+        // }
+
+        
+         // approach 02
+        // let main= document.getElementById("main");
+        // let pic1= document.getElementById("pic1");
+        // let pic2= document.getElementById("pic2");
+        // let pic3= document.getElementById("pic3");
+        // let pic4= document.getElementById("pic4");
+        // let pic5= document.getElementById("pic5");
+        // // console.log(pic1);
+
+        // pic1.addEventListener("click", function(){
+        //     main.src = pic1.src;
+        // });
+        //   pic2.addEventListener("click", function(){
+        //     main.src = pic2.src;
+        // });
+        //   pic3.addEventListener("click", function(){
+        //     main.src = pic3.src;
+        // });
+        //   pic4.addEventListener("click", function(){
+        //     main.src = pic4.src;
+        // });
+        //   pic5.addEventListener("click", function(){
+        //     main.src = pic5.src;
+        // });
+
+
+        // approach 03
+    let main = document.getElementById("main");
+    let imagetag = document.getElementsByTagName("img");
+
+    for (let i = 0; i < imagetag.length; i++) {
+        if (imagetag[i].id !== "main") {   // skip the main image
+            imagetag[i].addEventListener("click", function () {
+                main.src = this.src;
+            });
+        }
+    }
+    </script>
+</body>
+</html>
